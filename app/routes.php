@@ -86,7 +86,9 @@ Route::get('/anslist', function()
 {
 return View::make('forum.anslist');
 });
-
+Route::get('/askques', array(
+'uses' => 'QuesController@edit'
+));
 
 Route::resource('askques','QuesController');
 Route::resource('ansques','AnsController');

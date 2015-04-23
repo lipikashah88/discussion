@@ -25,16 +25,9 @@ tinymce.init({
     ],
     toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
 });
-function validate() {
-            var textarea = tinyMCE.get('question').getContent(); 
-            if (textarea==""|| (textarea==null))
-            {
-                    alert("Post body must not be left blank");
-                    question.focus();
-                    return false; 
-            }
 
-    }
+
+
 </script>
 </head>
 <body>
@@ -44,7 +37,8 @@ function validate() {
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <span class="icon-bar"></span></a>
+
                 <a class="navbar-brand" href="#" style="margin-top:10px;font-size:20px">Demo Application</a>
 
 
@@ -59,7 +53,7 @@ function validate() {
     </div>
 </div>
  
-<br><br>  <br><br>    
+<br><br> 
 <div class="container-fluid">
     <div class="row">
     <br><br>
@@ -78,7 +72,7 @@ function validate() {
                                     <div class="center span4 well">
                                         <legend>Questions</legend>
                                             <div class="form-group">
-                     
+                        {{Form::open(array('action'=>'QuesController@store','id'=>'contactform','file'=>true,'method' => 'post'))}}
                                                 <div class="input-group">
                                                 {{Form::select('subject', array('0' => 'Select Subject','1' => 'Maths', '2' => 'Science', '3' => 'English'))}}
                                                 </div> 
@@ -86,7 +80,7 @@ function validate() {
                                             </div>
                         <div class="form-group">
                             <div class="input-group">
-                                {{Form::open(array('action'=>'QuesController@store','id'=>'contactform','file'=>true,'method' => 'post','onClick'=>'return validate()'))}}
+                             
                                 <textarea name="question"  id="question" style="width:100%"></textarea> 
                                 {{ Form::submit('Post',array('id'=>'submit','class'=>'btn btn-primary btn-block'))}}
                                 {{ Form::close()}}
@@ -102,6 +96,10 @@ function validate() {
             </div>  
         </div>
     </div>
-</div>      
+</div>  
+</div>
+</div>
+</div>
+
 </body>
 </html>

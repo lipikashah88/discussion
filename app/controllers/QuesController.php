@@ -65,7 +65,9 @@ class QuesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+	
+    $ques = Questions::find($id);
+		return View::make('forum.askques',array('questions'=>$ques));
 	}
 
 

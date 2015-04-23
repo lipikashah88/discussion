@@ -63,3 +63,19 @@ h3{
 footer{
 background-color: #607B8B;
 }
+.btn1{
+	float: right;
+	color: #900;
+  	background: #F0E68C;
+ 	font-weight: bold;
+  	border: 1px solid #900;
+	border: 3px double #FC6;
+  	border-top-color: #FC9;
+  	border-left-color: #FC9;
+}
+.btn1:hover{
+	color: #FFF;
+  	background:#FFA500;
+  	cursor: pointer;
+	border-color: #F00 #C30 #C30 #F00;
+}
