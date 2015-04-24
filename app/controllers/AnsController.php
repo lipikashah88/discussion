@@ -91,7 +91,7 @@ class AnsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		
 	}
 
 

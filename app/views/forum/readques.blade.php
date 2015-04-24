@@ -59,19 +59,21 @@ $questions = Questions::where('user_id','!=',Auth::getUser()->id)->where('sub_id
                       @foreach($questions as $question)
                       <ul class="list-group">
                         <li class="list-group-item"><a href="/ansques?qid={{$question->id}}">{{$question->question}}</a>
-                        <button type="button" class="btn1"><a href="/askques?qid={{$question->id}}">Edit</a></button>
+                        <button type="button" class="btn1"><a href="/edit?qid={{$question->id}}">Edit</a></button>
                         <button type="button" class="btn1"><a href="/ansques?qid={{$question->id}}">Reply</a></button>
+                     
+
                         <?php
-                        //$qid=Answer::groupBy('q_id')->get();
-                        $replies = Answer::where('q_id','=','1')->count();
-                        echo "No of Replies :$replies";
-                        /*$replies = Answer::table('answer')
+                       //$qid=Answer::groupBy('q_id')->get();
+                       $replies = Answer::where('q_id','=','1')->count();
+                       echo "No of Replies :$replies";
+                       /* $replies = Answer::table('answer')
                         ->select('q_id',Answer::raw('count(*) as total'))
                         ->groupBy('q_id')
                         ->get();
                         echo "No of Replies :$replies";
-                       */
-                        
+                     */
+                     
                         ?>
                         
                         </li>
@@ -80,6 +82,7 @@ $questions = Questions::where('user_id','!=',Auth::getUser()->id)->where('sub_id
                       </ul>
                         @endforeach
                         </div>
+
                     </div>
                   </div>
                 </div>

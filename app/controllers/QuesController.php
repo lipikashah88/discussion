@@ -65,9 +65,9 @@ class QuesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-	
-    $ques = Questions::find($id);
-		return View::make('forum.askques',array('questions'=>$ques));
+
+	$ques = Questions::find($id);
+	return View::make('forum.askques',array('questions'=>$ques));
 	}
 
 
@@ -77,21 +77,28 @@ class QuesController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+
+
+	public function updateQ()
 	{
-		//
+		$id=Input::get('Language');
+		Questions::update($id,array(
+			'sub_id'=>Input::get('subject'),
+			'question'=>Input::get('question')
+			));
+		return Redirect::to('readques',$id);
 	}
 
 
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  int  $id
+	 * @param  int  $id 
 	 * @return Response
 	 */
 	public function destroy($id)
 	{
-		//
+	
 	}
 
 

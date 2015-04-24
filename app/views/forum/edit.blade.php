@@ -72,7 +72,7 @@ tinymce.init({
                                     <div class="center span4 well">
                                         <legend>Questions</legend>
                                             <div class="form-group">
-                        {{Form::open(array('action'=>'QuesController@store','id'=>'contactform','file'=>true,'method' => 'post'))}}
+                        {{Form::open(array('action'=>'QuesController@updateQ','id'=>'contactform','file'=>true,'method' => 'post'))}}
                                                 <div class="input-group">
                                                 {{Form::select('subject', array('0' => 'Select Subject','1' => 'Maths', '2' => 'Science', '3' => 'English'))}}
                                                 </div> 
@@ -81,11 +81,17 @@ tinymce.init({
                         <div class="form-group">
                             <div class="input-group">
                              
-                                <textarea name="question"  id="question" style="width:100%"></textarea> 
-                                                       
+                                <textarea name="question"  id="question" style="width:100%">
+                            <?php
+                           $qid = $_GET['qid'];
+                           $ques = Questions::find($qid);
+                           echo $ques->question;
+
+                           ?>
+                                </textarea> 
                                 {{ Form::submit('Post',array('id'=>'submit','class'=>'btn btn-primary btn-block'))}}
                                 {{ Form::close()}}
-
+                             <input type="hidden" name="Language" value= {{$ques->id}}>
                         </div>
                            @if (Session::has('message'))
                                <div class="alert alert-success">Your question has been posted</div>
