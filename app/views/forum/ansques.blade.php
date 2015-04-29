@@ -101,7 +101,7 @@ tinymce.init({
           
             {{Form::open(array('action'=>'AnsController@store','id'=>'answer','file'=>true,'method'=>'post','onClick'=>'return validate()'))}}
         
-            <textarea name="answer"  id="answer" style="width:100%"></textarea> <br><br>
+            <textarea name="answer" id="answer" style="width:100%"></textarea> <br><br>
             <input type="hidden" name="qid" value ={{$qid}}>
             {{ Form::submit('Post your answer!',array('id'=>'submit','class'=>'btn btn-primary')) }}
             {{ Form::close() }}

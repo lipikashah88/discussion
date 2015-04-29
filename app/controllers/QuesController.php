@@ -52,10 +52,8 @@ class QuesController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
-	}
-
-	
+		 //
+	}	
 
 	/**
 	 * Show the form for editing the specified resource.
@@ -63,12 +61,13 @@ class QuesController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
+
 	public function edit($id)
 	{
-
 	$ques = Questions::find($id);
-	return View::make('forum.askques',array('questions'=>$ques));
-	}
+	//return View::make('forum.askques',array('questions'=>$ques));
+	return View::make('forum.edit')->with('questions', $ques);
+    }
 
 
 	/**
@@ -78,16 +77,18 @@ class QuesController extends \BaseController {
 	 * @return Response
 	 */
 
-
+	
 	public function updateQ()
 	{
-		$id=Input::get('Language');
-		Questions::update($id,array(
-			'sub_id'=>Input::get('subject'),
-			'question'=>Input::get('question')
-			));
-		return Redirect::to('readques',$id);
+	 	$id=Input::get('Language');
+	 //	return $id;
+	 	$question = Questions::find($id);
+		$question->question = Input::get('question');
+		$question->save();
+		
 	}
+	
+
 
 
 	/**
@@ -98,8 +99,9 @@ class QuesController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-	
+	$quest=Questions::find($id);
+	$quest->delete();
+	session::flash_notice('message','Successfully deleted the question!');
+	return Redirect::to('/readques');
 	}
-
-
 }

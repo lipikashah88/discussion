@@ -52,7 +52,7 @@
                 <div class="center span4 well">
                     <legend>login</legend>
 
-                    {{Form::open(array('action'=>'UserController@postLogin','id'=>'contactform','file'=>true,'method' => 'post'))}}
+                    {{Form::open(array('action'=>'UserController@postLogin2','id'=>'contactform','file'=>true,'method' => 'post'))}}
                     <div class="form-group @if ($errors->has('username')) has-error @endif">
                         <div class="input-group">
                             <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>

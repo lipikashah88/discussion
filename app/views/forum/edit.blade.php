@@ -86,19 +86,19 @@ tinymce.init({
                            $qid = $_GET['qid'];
                            $ques = Questions::find($qid);
                            echo $ques->question;
-
                            ?>
                                 </textarea> 
                                 {{ Form::submit('Post',array('id'=>'submit','class'=>'btn btn-primary btn-block'))}}
-                                {{ Form::close()}}
-                             <input type="hidden" name="Language" value= {{$ques->id}}>
+                 
+                               
+                             <input type="hidden" name="Language" id="Language" value= '{{$ques->id}}'>
                         </div>
                            @if (Session::has('message'))
                                <div class="alert alert-success">Your question has been posted</div>
                            @endif
 
 
-
+  {{ Form::close()}}
                                     </div>
                                 </div>
                 </div>
@@ -110,6 +110,5 @@ tinymce.init({
 </div>
 </div>
 </div>
-
 </body>
 </html>

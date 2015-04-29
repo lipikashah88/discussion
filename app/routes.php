@@ -37,7 +37,7 @@ Route::get('/login', function()
 });
 
 Route::post('/login', array(
-    'uses' => 'UserController@postLogin'
+    'uses' => 'UserController@postLogin2'
 ));
 
 Route::group(array('before' => 'auth'), function()

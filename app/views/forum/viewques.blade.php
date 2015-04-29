@@ -76,7 +76,7 @@ else
    {
    echo "Key does not exist!";
    } ?>
-     <button type="submit" class="btn btn-primary">Click Me!</button>
+     <button type="submit" class="btn btn-primary" style="width:100px;margin:20px;cursor:pointer;background-color:#00334C;box-shadow:7px 7px 7px #474747">Click Me!</button>
 <!--{{ Form::submit('Click /me!')}}-->
       </div> 
     </div>

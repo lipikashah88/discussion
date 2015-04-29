@@ -35,7 +35,7 @@ class UserController extends BaseController {
     }
 	
 
- public function postLogin()
+ public function postLogin2()
     {
         $rules = array(
                              
