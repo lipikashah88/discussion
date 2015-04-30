@@ -64,6 +64,7 @@ footer{
 background-color: #607B8B;
 }
 .btn1{
+	margin-top: -20px;
 	float: right;
 	color: #900;
   	background: #F0E68C;

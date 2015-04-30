@@ -91,7 +91,7 @@ Route::get('/edit', function()
 {
 return View::make('forum.edit');
 });
-Route::post('/edit',array(
+Route::post('/review',array(
 'uses'=>'QuesController@updateQ'
 ));
 

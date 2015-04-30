@@ -86,7 +86,9 @@ tinymce.init({
                                 {{ Form::submit('Post',array('id'=>'submit','class'=>'btn btn-primary btn-block'))}}
                                 {{ Form::close()}}
 
-                        </div>
+                            
+
+                            </div>
                            @if (Session::has('message'))
                                <div class="alert alert-success">Your question has been posted</div>
                            @endif
@@ -101,8 +103,6 @@ tinymce.init({
         </div>
     </div>
 </div>  
-</div>
-</div>
 </div>
 
 </body>

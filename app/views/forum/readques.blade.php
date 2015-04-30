@@ -61,26 +61,12 @@ $questions = Questions::where('user_id','!=',Auth::getUser()->id)->where('sub_id
                       @foreach($questions as $question)
                       <ul class="list-group">
                         <li class="list-group-item"><a href="/ansques?qid={{$question->id}}">{{$question->question}} </a>
-
                         <button type="button" class="btn1"><a href="/edit?qid={{$question->id}}">Edit</a></button>
-                        <button type="button" class="btn1"><a href="/ansques?qid={{$question->id}}">Reply</a></button>
+                        <button type="button" class="btn1"><a href="/ansques?qid={{$question->id}}">Reply</a></button> 
+                        </li>
                     
 
-                        <?php
-                       //$qid=Answer::groupBy('q_id')->get();
-                       $replies = Answer::where('q_id','=','')->count();
-                       echo "No of Replies :$replies";
-                       /* $replies = Answer::table('answer')
-                        ->select('q_id',Answer::raw('count(*) as total'))
-                        ->groupBy('q_id')
-                        ->get();
-                        echo "No of Replies :$replies";
-                     */
-                     
-                        ?> 
-                       
-
-                       </li>
+                      
                         <small>Posted by</small><span class="badge">{{ User::find($question->user_id)->username}}</span><small> on </small>{{$question->created_at; }}</p>
                         {{ Form::button('View all answers!',array('id'=>'button','class'=>'btn btn-primary', 'onClick'=>'showAnswer('.$question->id.')'))}}
                       </ul>

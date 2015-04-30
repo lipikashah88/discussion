@@ -85,7 +85,7 @@ class QuesController extends \BaseController {
 	 	$question = Questions::find($id);
 		$question->question = Input::get('question');
 		$question->save();
-		
+		return "you have successfully updated the question";
 	}
 	
 
@@ -99,9 +99,6 @@ class QuesController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-	$quest=Questions::find($id);
-	$quest->delete();
-	session::flash_notice('message','Successfully deleted the question!');
-	return Redirect::to('/readques');
+	
 	}
 }
